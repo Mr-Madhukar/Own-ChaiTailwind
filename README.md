@@ -8,6 +8,8 @@ ChaiTailwind is a DOM manipulation library that allows you to style HTML element
 
 Instead of writing traditional CSS, your script scans the DOM, reads these class names, converts them into corresponding inline styles, and applies them dynamically.
 
+**Live Demo:** https://my-chai-tailwind.netlify.app/
+
 ## Features
 
 ✨ **Lightweight** - No dependencies, small file size (~10KB)  
