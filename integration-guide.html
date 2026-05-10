@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaiTailwind - Integration Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #4ec9b0;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #569cd6;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        .code-block {
+            background: #252526;
+            padding: 15px;
+            border-left: 3px solid #569cd6;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .highlight {
+            background: #264f78;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ChaiTailwind - Integration Guide</h1>
+        <p>Advanced patterns and real-world integration examples</p>
+
+        <!-- Basic Integration -->
+        <div class="section">
+            <h2>1. Basic Integration</h2>
+            <p>The simplest way to get started:</p>
+            <div class="code-block">
+&lt;!-- At the end of your body tag --&gt;
+&lt;script src="path/to/chaitailwind.js"&gt;&lt;/script&gt;
+
+&lt;!-- Then use chai-* classes --&gt;
+&lt;div class="chai-p-20 chai-bg-blue chai-text-white"&gt;
+    Hello World!
+&lt;/div&gt;
+            </div>
+            <p>The library auto-initializes when DOM is ready.</p>
+        </div>
+
+        <!-- React Integration -->
+        <div class="section">
+            <h2>2. React Integration</h2>
+            <p>Use ChaiTailwind in React components:</p>
+            <div class="code-block">
+import ChaiTailwind from 'chaitailwind';
+import { useEffect } from 'react';
+
+function App() {
+  useEffect(() => {
+    const chai = new ChaiTailwind({ debug: false });
+    chai.scan();
+    
+    // Listen for DOM changes
+    const observer = new MutationObserver(() => {
+      chai.rescan();
+    });
+    
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+    
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    &lt;div className="chai-p-20 chai-bg-blue chai-text-white"&gt;
+      Hello React!
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+            </div>
+        </div>
+
+        <!-- Vue.js Integration -->
+        <div class="section">
+            <h2>3. Vue.js Integration</h2>
+            <p>Integrate with Vue 3:</p>
+            <div class="code-block">
+&lt;script setup&gt;
+import { onMounted } from 'vue';
+import ChaiTailwind from 'chaitailwind';
+
+onMounted(() => {
+  const chai = new ChaiTailwind({ debug: true });
+  chai.init();
+});
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;div class="chai-p-20 chai-bg-blue chai-text-white"&gt;
+    Hello Vue!
+  &lt;/div&gt;
+&lt;/template&gt;
+            </div>
+        </div>
+
+        <!-- Dynamic Content -->
+        <div class="section">
+            <h2>4. Dynamic Content</h2>
+            <p>Update ChaiTailwind when DOM changes:</p>
+            <div class="code-block">
+const chai = new ChaiTailwind();
+chai.init();
+
+// When adding new elements dynamically
+const newElement = document.createElement('div');
+newElement.className = 'chai-p-10 chai-bg-red chai-text-white';
+newElement.textContent = 'New Element';
+document.body.appendChild(newElement);
+
+// Re-scan to apply styles to new elements
+chai.rescan();
+            </div>
+        </div>
+
+        <!-- Custom Utilities -->
+        <div class="section">
+            <h2>5. Custom Utilities</h2>
+            <p>Extend ChaiTailwind with your own utilities:</p>
+            <div class="code-block">
+const chai = new ChaiTailwind();
+
+// Add single custom utility
+chai.addUtility('gradient-sunset', () => ({
+  background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+  color: 'white'
+}));
+
+// Add multiple utilities at once
+chai.addUtilities({
+  'card-shadow': () => ({
+    boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
+  }),
+  'button-hover': () => ({
+    transition: 'all 0.3s ease'
+  }),
+  'blur-background': (value) => ({
+    backdropFilter: `blur(${value}px)`
+  })
+});
+
+chai.init();
+
+// Usage in HTML:
+// &lt;div class="chai-gradient-sunset chai-card-shadow"&gt;...&lt;/div&gt;
+// &lt;div class="chai-blur-background-10"&gt;...&lt;/div&gt;
+            </div>
+        </div>
+
+        <!-- Configuration Options -->
+        <div class="section">
+            <h2>6. Configuration</h2>
+            <p>Customize ChaiTailwind behavior:</p>
+            <div class="code-block">
+const chai = new ChaiTailwind({
+  prefix: 'tw-',      // Change prefix (default: 'chai-')
+  debug: true         // Enable debug logging (default: false)
+});
+
+chai.init();
+
+// Useful for large projects:
+const debugChai = new ChaiTailwind({ 
+  debug: true,        // See what's happening
+  prefix: 'chai-'     
+});
+            </div>
+        </div>
+
+        <!-- Performance Tips -->
+        <div class="section">
+            <h2>7. Performance Optimization</h2>
+            <p>Best practices for production:</p>
+            <div class="code-block">
+// ✅ GOOD: Initialize once
+const chai = new ChaiTailwind({ debug: false });
+chai.init();
+
+// ✅ GOOD: Batch DOM updates
+const fragment = document.createDocumentFragment();
+for (let i = 0; i < 100; i++) {
+  const el = document.createElement('div');
+  el.className = 'chai-p-5 chai-bg-blue';
+  fragment.appendChild(el);
+}
+document.body.appendChild(fragment);
+chai.rescan();
+
+// ❌ AVOID: Multiple rescan calls
+element1.appendChild(el);
+chai.rescan();
+element2.appendChild(el);
+chai.rescan();  // Bad!
+
+// ✅ GOOD: Batch rescan
+element1.appendChild(el);
+element2.appendChild(el);
+chai.rescan();  // Once!
+            </div>
+        </div>
+
+        <!-- Debugging -->
+        <div class="section">
+            <h2>8. Debugging</h2>
+            <p>Use debug mode to troubleshoot:</p>
+            <div class="code-block">
+// Enable debug logging
+const chai = new ChaiTailwind({ debug: true });
+chai.init();
+
+// Output in console:
+// "ChaiTailwind initialized"
+// "Applied p-20 to &lt;div&gt;"
+// "Applied bg-blue to &lt;div&gt;"
+// "ChaiTailwind scan complete. Processed X elements"
+
+// Check if utility exists
+if (chai.utilities['custom-utility']) {
+  console.log('Utility found!');
+}
+            </div>
+        </div>
+
+        <!-- Browser DevTools -->
+        <div class="section">
+            <h2>9. Using DevTools</h2>
+            <p>Debug ChaiTailwind styles in browser:</p>
+            <div class="code-block">
+// In browser console:
+const chai = window.ChaiTailwind;
+const chaiInstance = new chai({ debug: true });
+
+// View applied styles on element
+const el = document.querySelector('[class*="chai-"]');
+console.log(el.style);  // See inline styles
+
+// Test adding custom utility
+chaiInstance.addUtility('test', () => ({ 
+  color: 'red' 
+}));
+            </div>
+        </div>
+
+        <!-- Error Handling -->
+        <div class="section">
+            <h2>10. Error Handling</h2>
+            <p>Handle edge cases gracefully:</p>
+            <div class="code-block">
+const chai = new ChaiTailwind({ debug: true });
+
+// Invalid utility - warning in console
+// &lt;div class="chai-invalid-utility"&gt;
+// Warning: Unknown utility: invalid
+
+// Non-numeric value - handled gracefully
+// &lt;div class="chai-w-auto"&gt; 
+// width: auto ✓
+
+// Mixed utilities - works fine
+// &lt;div class="chai-p-10 normal-class chai-bg-blue"&gt;
+// Only chai-* classes are processed
+
+chai.init();
+            </div>
+        </div>
+
+        <!-- Real World Example -->
+        <div class="section">
+            <h2>11. Real World Example: Product Card Component</h2>
+            <div class="code-block">
+&lt;div class="chai-p-15 chai-bg-white chai-rounded-lg chai-shadow-md"&gt;
+  &lt;img src="product.jpg" alt="Product" 
+       class="chai-w-100 chai-rounded-md chai-mb-10"&gt;
+  
+  &lt;h3 class="chai-text-lg chai-font-bold chai-mb-5"&gt;
+    Product Name
+  &lt;/h3&gt;
+  
+  &lt;p class="chai-text-sm chai-text-gray chai-mb-10"&gt;
+    Product description...
+  &lt;/p&gt;
+  
+  &lt;div class="chai-flex chai-justify-between chai-items-center"&gt;
+    &lt;span class="chai-text-2xl chai-font-bold chai-text-blue"&gt;
+      $99.99
+    &lt;/span&gt;
+    &lt;button 
+        class="chai-p-10 chai-bg-blue chai-text-white 
+               chai-rounded chai-cursor-pointer chai-font-semibold"&gt;
+      Add to Cart
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="section">
+            <h2>12. Troubleshooting</h2>
+            <p><span class="highlight">Q: Styles not applying?</span></p>
+            <div class="code-block">
+A: Check:
+1. Script is loaded after DOM content
+2. Class names follow chai-* pattern
+3. Utility name is valid
+4. Call init() or rescan() after adding elements
+            </div>
+            
+            <p style="margin-top: 20px;"><span class="highlight">Q: Performance issues?</span></p>
+            <div class="code-block">
+A: Try:
+1. Disable debug mode (debug: false)
+2. Reduce number of chai-* classes
+3. Batch DOM updates and rescan once
+4. Use custom prefix for targeted scanning
+            </div>
+            
+            <p style="margin-top: 20px;"><span class="highlight">Q: Works locally but not in production?</span></p>
+            <div class="code-block">
+A: Check:
+1. Script path is correct
+2. No CSP violations
+3. DOM is ready when script runs
+4. No conflicting CSS or scripts
+            </div>
+        </div>
+    </div>
+</body>
+</html>

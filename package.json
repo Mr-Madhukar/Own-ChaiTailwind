@@ -1,0 +1,27 @@
+{
+  "name": "chaitailwind",
+  "version": "1.0.0",
+  "description": "A lightweight utility-first CSS engine using JavaScript. Write CSS using intuitive class names like chai-p-2, chai-bg-red, and more!",
+  "main": "chaitailwind.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "utility-first",
+    "chai-tailwind",
+    "javascript",
+    "dom-manipulation",
+    "styling"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/chaitailwind"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/chaitailwind/issues"
+  },
+  "homepage": "https://github.com/yourusername/chaitailwind#readme"
+}

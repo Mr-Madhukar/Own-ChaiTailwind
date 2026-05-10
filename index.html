@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaiTailwind - Utility-First CSS Engine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            border-top: 2px solid #ddd;
+            padding: 30px 0;
+        }
+
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .demo-item {
+            padding: 20px;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+
+        .demo-box {
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            font-weight: 600;
+        }
+
+        .nav {
+            background: #333;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .flex-demo {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <h1 style="font-size: 24px; margin: 0;">ChaiTailwind</h1>
+            <ul class="nav-links">
+                <li><a href="#spacing">Spacing</a></li>
+                <li><a href="#colors">Colors</a></li>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#layout">Layout</a></li>
+                <li><a href="#utilities">Utilities</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="demo-section">
+        <div class="demo-container">
+            <div class="chai-p-20 chai-bg-blue chai-rounded-lg chai-text-white chai-text-center">
+                <h1 class="chai-text-4xl chai-font-bold chai-mb-10">ChaiTailwind</h1>
+                <p class="chai-text-xl chai-mb-5">A Lightweight Utility-First CSS Engine Built with JavaScript</p>
+                <p class="chai-text-lg">Write CSS using intuitive class names like <code>chai-p-2</code>, <code>chai-bg-red</code>, and more!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacing Section -->
+    <section class="demo-section" id="spacing">
+        <div class="demo-container">
+            <h2 class="chai-text-3xl chai-font-bold chai-mb-5">Spacing Utilities</h2>
+            <p class="chai-text-base chai-mb-5">Control padding and margin with simple class names:</p>
+
+            <div class="chai-grid">
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <h4 class="chai-font-semibold">Padding (p)</h4>
+                        <p class="chai-text-sm chai-text-gray chai-mb-3">chai-p-10</p>
+                        <div class="chai-p-10 chai-bg-blue chai-text-white chai-rounded">Content with 10px padding</div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h4 class="chai-font-semibold">Margin (m)</h4>
+                        <p class="chai-text-sm chai-text-gray chai-mb-3">chai-m-10</p>
+                        <div class="chai-bg-gray">
+                            <div class="chai-m-10 chai-bg-purple chai-text-white chai-rounded">Content with 10px margin</div>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h4 class="chai-font-semibold">Horizontal Padding</h4>
+                        <p class="chai-text-sm chai-text-gray chai-mb-3">chai-px-15</p>
+                        <div class="chai-px-15 chai-bg-green chai-text-white chai-rounded">15px left & right</div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h4 class="chai-font-semibold">Vertical Margin</h4>
+                        <p class="chai-text-sm chai-text-gray chai-mb-3">chai-my-8</p>
+                        <div class="chai-bg-gray" style="padding: 10px;">
+                            <div class="chai-my-8 chai-bg-orange chai-text-white chai-rounded">8px top & bottom</div>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h4 class="chai-font-semibold">Top Padding</h4>
+                        <p class="chai-text-sm chai-text-gray chai-mb-3">chai-pt-15</p>
+                        <div class="chai-pt-15 chai-bg-pink chai-text-white chai-rounded">15px top padding</div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h4 class="chai-font-semibold">Bottom Margin</h4>
+                        <p class="chai-text-sm chai-text-gray chai-mb-3">chai-mb-12</p>
+                        <div class="chai-bg-gray" style="padding: 10px;">
+                            <div class="chai-mb-12 chai-bg-red chai-text-white chai-rounded">12px bottom margin</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colors Section -->
+    <section class="demo-section" id="colors">
+        <div class="demo-container">
+            <h2 class="chai-text-3xl chai-font-bold chai-mb-5">Color Utilities</h2>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mt-5 chai-mb-3">Background Colors</h3>
+            <div class="demo-grid">
+                <div class="chai-p-10 chai-bg-red chai-text-white chai-rounded chai-text-center chai-font-semibold">chai-bg-red</div>
+                <div class="chai-p-10 chai-bg-blue chai-text-white chai-rounded chai-text-center chai-font-semibold">chai-bg-blue</div>
+                <div class="chai-p-10 chai-bg-green chai-text-white chai-rounded chai-text-center chai-font-semibold">chai-bg-green</div>
+                <div class="chai-p-10 chai-bg-yellow chai-text-black chai-rounded chai-text-center chai-font-semibold">chai-bg-yellow</div>
+                <div class="chai-p-10 chai-bg-purple chai-text-white chai-rounded chai-text-center chai-font-semibold">chai-bg-purple</div>
+                <div class="chai-p-10 chai-bg-pink chai-text-white chai-rounded chai-text-center chai-font-semibold">chai-bg-pink</div>
+            </div>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mt-5 chai-mb-3">Text Colors</h3>
+            <div class="demo-grid">
+                <div class="chai-p-10 chai-bg-white chai-text-red chai-rounded chai-text-center chai-font-semibold chai-border">chai-text-red</div>
+                <div class="chai-p-10 chai-bg-white chai-text-blue chai-rounded chai-text-center chai-font-semibold chai-border">chai-text-blue</div>
+                <div class="chai-p-10 chai-bg-white chai-text-green chai-rounded chai-text-center chai-font-semibold chai-border">chai-text-green</div>
+                <div class="chai-p-10 chai-bg-white chai-text-purple chai-rounded chai-text-center chai-font-semibold chai-border">chai-text-purple</div>
+                <div class="chai-p-10 chai-bg-white chai-text-orange chai-rounded chai-text-center chai-font-semibold chai-border">chai-text-orange</div>
+                <div class="chai-p-10 chai-bg-gray chai-text-dark chai-rounded chai-text-center chai-font-semibold chai-border">chai-text-dark</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography Section -->
+    <section class="demo-section" id="typography">
+        <div class="demo-container">
+            <h2 class="chai-text-3xl chai-font-bold chai-mb-5">Typography Utilities</h2>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3">Font Sizes</h3>
+            <div class="chai-p-5">
+                <div class="chai-text-xs chai-mb-3">chai-text-xs: Extra Small Text</div>
+                <div class="chai-text-sm chai-mb-3">chai-text-sm: Small Text</div>
+                <div class="chai-text-base chai-mb-3">chai-text-base: Base Text Size</div>
+                <div class="chai-text-lg chai-mb-3">chai-text-lg: Large Text Size</div>
+                <div class="chai-text-xl chai-mb-3">chai-text-xl: Extra Large Text</div>
+                <div class="chai-text-2xl chai-mb-3">chai-text-2xl: 2XL Text Size</div>
+                <div class="chai-text-3xl chai-mb-3">chai-text-3xl: 3XL Text Size</div>
+                <div class="chai-text-4xl">chai-text-4xl: 4XL Text Size</div>
+            </div>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3 chai-mt-5">Font Weights</h3>
+            <div class="demo-grid">
+                <div class="chai-p-10 chai-bg-gray chai-rounded chai-text-center">
+                    <div class="chai-font-light">Light (300)</div>
+                    <div class="chai-text-sm chai-text-gray">chai-font-light</div>
+                </div>
+                <div class="chai-p-10 chai-bg-gray chai-rounded chai-text-center">
+                    <div class="chai-font-normal">Normal (400)</div>
+                    <div class="chai-text-sm chai-text-gray">chai-font-normal</div>
+                </div>
+                <div class="chai-p-10 chai-bg-gray chai-rounded chai-text-center">
+                    <div class="chai-font-semibold">Semibold (600)</div>
+                    <div class="chai-text-sm chai-text-gray">chai-font-semibold</div>
+                </div>
+                <div class="chai-p-10 chai-bg-gray chai-rounded chai-text-center">
+                    <div class="chai-font-bold">Bold (700)</div>
+                    <div class="chai-text-sm chai-text-gray">chai-font-bold</div>
+                </div>
+            </div>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3 chai-mt-5">Text Alignment</h3>
+            <div class="chai-p-10 chai-bg-gray chai-rounded chai-mb-3">
+                <div class="chai-text-left chai-p-3 chai-bg-white chai-mb-3">chai-text-left: Left aligned text</div>
+                <div class="chai-text-center chai-p-3 chai-bg-white chai-mb-3">chai-text-center: Center aligned text</div>
+                <div class="chai-text-right chai-p-3 chai-bg-white">chai-text-right: Right aligned text</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layout Section -->
+    <section class="demo-section" id="layout">
+        <div class="demo-container">
+            <h2 class="chai-text-3xl chai-font-bold chai-mb-5">Layout Utilities</h2>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3">Flexbox</h3>
+            <p class="chai-mb-3">Flex container with centered items:</p>
+            <div class="chai-flex chai-justify-center chai-items-center chai-gap-10 chai-p-10 chai-bg-gray chai-rounded chai-mb-5">
+                <div class="chai-p-5 chai-bg-blue chai-text-white chai-rounded">Item 1</div>
+                <div class="chai-p-5 chai-bg-green chai-text-white chai-rounded">Item 2</div>
+                <div class="chai-p-5 chai-bg-purple chai-text-white chai-rounded">Item 3</div>
+            </div>
+
+            <p class="chai-mb-3">Flex with space-between:</p>
+            <div class="chai-flex chai-justify-between chai-items-center chai-p-10 chai-bg-gray chai-rounded chai-mb-5">
+                <div class="chai-p-5 chai-bg-red chai-text-white chai-rounded">Left</div>
+                <div class="chai-p-5 chai-bg-orange chai-text-white chai-rounded">Center</div>
+                <div class="chai-p-5 chai-bg-pink chai-text-white chai-rounded">Right</div>
+            </div>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3">Display Types</h3>
+            <div class="demo-grid">
+                <div class="chai-p-5 chai-border chai-rounded">
+                    <div class="chai-block chai-bg-blue chai-text-white chai-p-3 chai-rounded-md">chai-block</div>
+                </div>
+                <div class="chai-p-5 chai-border chai-rounded">
+                    <span class="chai-inline-block chai-bg-green chai-text-white chai-p-3 chai-rounded-md">chai-inline-block</span>
+                </div>
+                <div class="chai-p-5 chai-border chai-rounded">
+                    <span class="chai-inline chai-bg-purple chai-text-white">chai-inline</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Utilities Section -->
+    <section class="demo-section" id="utilities">
+        <div class="demo-container">
+            <h2 class="chai-text-3xl chai-font-bold chai-mb-5">Additional Utilities</h2>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3">Borders & Radius</h3>
+            <div class="demo-grid">
+                <div class="chai-p-10 chai-bg-white chai-border chai-rounded chai-text-center">
+                    <div class="chai-text-sm chai-font-semibold">chai-rounded</div>
+                </div>
+                <div class="chai-p-10 chai-bg-white chai-border chai-rounded-lg chai-text-center">
+                    <div class="chai-text-sm chai-font-semibold">chai-rounded-lg</div>
+                </div>
+                <div class="chai-p-10 chai-bg-white chai-border chai-rounded-xl chai-text-center">
+                    <div class="chai-text-sm chai-font-semibold">chai-rounded-xl</div>
+                </div>
+                <div class="chai-p-10 chai-bg-white chai-border chai-rounded-full chai-text-center">
+                    <div class="chai-text-sm chai-font-semibold">chai-rounded-full</div>
+                </div>
+            </div>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3 chai-mt-5">Shadows</h3>
+            <div class="demo-grid">
+                <div class="chai-p-10 chai-bg-white chai-shadow chai-rounded">
+                    <div class="chai-text-center chai-font-semibold">chai-shadow</div>
+                </div>
+                <div class="chai-p-10 chai-bg-white chai-shadow-md chai-rounded">
+                    <div class="chai-text-center chai-font-semibold">chai-shadow-md</div>
+                </div>
+                <div class="chai-p-10 chai-bg-white chai-shadow-lg chai-rounded">
+                    <div class="chai-text-center chai-font-semibold">chai-shadow-lg</div>
+                </div>
+            </div>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3 chai-mt-5">Sizing</h3>
+            <div class="chai-p-5 chai-bg-gray chai-rounded">
+                <div class="chai-w-100 chai-h-100 chai-bg-blue chai-rounded chai-flex chai-justify-center chai-items-center chai-text-white chai-font-semibold">
+                    chai-w-100 x chai-h-100
+                </div>
+            </div>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3 chai-mt-5">Other Utilities</h3>
+            <div class="chai-p-10 chai-bg-gray chai-rounded">
+                <div class="chai-mb-3">
+                    <span class="chai-p-3 chai-bg-yellow chai-text-dark chai-rounded chai-cursor-pointer">chai-cursor-pointer (hover)</span>
+                </div>
+                <div class="chai-p-3 chai-bg-white chai-border chai-rounded chai-truncate">
+                    chai-truncate: This text is very long and will be truncated with an ellipsis if it overflows the container...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Example Section -->
+    <section class="demo-section">
+        <div class="demo-container">
+            <h2 class="chai-text-3xl chai-font-bold chai-mb-5">How to Use</h2>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3">1. Include the Script</h3>
+            <div class="code-block">&lt;script src="chaitailwind.js"&gt;&lt;/script&gt;</div>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3">2. Add Classes to Your HTML</h3>
+            <div class="code-block">&lt;div class="chai-p-20 chai-bg-blue chai-rounded-lg chai-text-white chai-text-center"&gt;
+  &lt;h1 class="chai-text-3xl chai-font-bold"&gt;Hello ChaiTailwind!&lt;/h1&gt;
+  &lt;p class="chai-text-lg"&gt;Beautiful styling with simple class names&lt;/p&gt;
+&lt;/div&gt;</div>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3">3. Advanced Usage (JavaScript)</h3>
+            <div class="code-block">// Create instance with debug mode
+const chai = new ChaiTailwind({ debug: true });
+
+// Add custom utilities
+chai.addUtility('custom-shadow', () => ({
+  boxShadow: '0 0 20px rgba(0,0,0,0.3)'
+}));
+
+// Rescan if DOM changes
+chai.rescan();</div>
+
+            <h3 class="chai-text-2xl chai-font-semibold chai-mb-3">Pattern Guide</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pattern</th>
+                        <th>Example</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Spacing with value</td>
+                        <td><code>chai-p-10</code></td>
+                        <td>padding: 10px</td>
+                    </tr>
+                    <tr>
+                        <td>Color utilities</td>
+                        <td><code>chai-bg-red</code>, <code>chai-text-blue</code></td>
+                        <td>Background and text colors</td>
+                    </tr>
+                    <tr>
+                        <td>Typography</td>
+                        <td><code>chai-text-2xl</code>, <code>chai-font-bold</code></td>
+                        <td>Font size and weight</td>
+                    </tr>
+                    <tr>
+                        <td>Layout</td>
+                        <td><code>chai-flex</code>, <code>chai-justify-center</code></td>
+                        <td>Flexbox utilities</td>
+                    </tr>
+                    <tr>
+                        <td>Without value</td>
+                        <td><code>chai-flex</code>, <code>chai-hidden</code></td>
+                        <td>Boolean/toggle utilities</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="demo-section">
+        <div class="demo-container">
+            <h2 class="chai-text-3xl chai-font-bold chai-mb-5">Key Features</h2>
+            <div class="demo-grid">
+                <div class="chai-p-5 chai-bg-blue chai-text-white chai-rounded-lg">
+                    <h4 class="chai-text-lg chai-font-bold chai-mb-2">⚡ Lightweight</h4>
+                    <p>No dependencies, small file size, fast loading</p>
+                </div>
+                <div class="chai-p-5 chai-bg-green chai-text-white chai-rounded-lg">
+                    <h4 class="chai-text-lg chai-font-bold chai-mb-2">🎨 Easy to Use</h4>
+                    <p>Intuitive class naming similar to Tailwind CSS</p>
+                </div>
+                <div class="chai-p-5 chai-bg-purple chai-text-white chai-rounded-lg">
+                    <h4 class="chai-text-lg chai-font-bold chai-mb-2">🔧 Customizable</h4>
+                    <p>Add your own custom utilities easily</p>
+                </div>
+                <div class="chai-p-5 chai-bg-orange chai-text-white chai-rounded-lg">
+                    <h4 class="chai-text-lg chai-font-bold chai-mb-2">📱 Responsive Ready</h4>
+                    <p>Works with any responsive design pattern</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="chai-mt-10">
+        <div class="chai-py-10">
+            <h3 class="chai-text-2xl chai-font-bold chai-mb-3">ChaiTailwind</h3>
+            <p class="chai-mb-3">A lightweight utility-first CSS engine built with JavaScript</p>
+            <p class="chai-text-gray">© 2026 ChaiTailwind. Built with ❤️</p>
+            <div class="chai-mt-5">
+                <a href="https://github.com" style="color: white; margin: 0 10px;">GitHub</a>
+                <a href="#" style="color: white; margin: 0 10px;">Documentation</a>
+                <a href="#" style="color: white; margin: 0 10px;">Issues</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="chaitailwind.js"></script>
+</body>
+</html>

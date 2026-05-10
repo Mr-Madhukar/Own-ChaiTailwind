@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaiTailwind - Responsive Blog Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="chai-flex chai-justify-between chai-items-center chai-p-15 chai-bg-dark chai-text-white chai-shadow-lg">
+        <h1 class="chai-text-2xl chai-font-bold">My Blog</h1>
+        <div class="chai-flex chai-gap-15">
+            <a href="#" class="chai-text-white chai-cursor-pointer chai-hover-underline">Home</a>
+            <a href="#" class="chai-text-white chai-cursor-pointer chai-hover-underline">Blog</a>
+            <a href="#" class="chai-text-white chai-cursor-pointer chai-hover-underline">About</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="chai-p-30 chai-bg-blue chai-text-white chai-text-center">
+        <h1 class="chai-text-4xl chai-font-bold chai-mb-10">Welcome to My Blog</h1>
+        <p class="chai-text-xl chai-mb-5">Exploring the world of web development</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="chai-flex chai-gap-20" style="max-width: 1200px; margin: 0 auto; padding: 30px 20px;">
+        <!-- Sidebar -->
+        <aside class="chai-w-250 chai-flex-shrink-0">
+            <div class="chai-p-15 chai-bg-gray chai-rounded-lg chai-mb-20">
+                <h3 class="chai-text-lg chai-font-bold chai-mb-10">About Me</h3>
+                <p class="chai-text-sm chai-text-dark chai-mb-10">Web developer passionate about creating amazing digital experiences.</p>
+                <button class="chai-w-100 chai-p-10 chai-bg-blue chai-text-white chai-rounded chai-cursor-pointer chai-font-semibold">
+                    Follow
+                </button>
+            </div>
+
+            <div class="chai-p-15 chai-bg-gray chai-rounded-lg">
+                <h3 class="chai-text-lg chai-font-bold chai-mb-10">Categories</h3>
+                <ul style="list-style: none;">
+                    <li class="chai-mb-5"><a href="#" class="chai-text-blue chai-cursor-pointer">JavaScript (5)</a></li>
+                    <li class="chai-mb-5"><a href="#" class="chai-text-blue chai-cursor-pointer">CSS (3)</a></li>
+                    <li class="chai-mb-5"><a href="#" class="chai-text-blue chai-cursor-pointer">Web Design (4)</a></li>
+                    <li><a href="#" class="chai-text-blue chai-cursor-pointer">Tools (2)</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Blog Posts -->
+        <main class="chai-flex-1">
+            <!-- Post 1 -->
+            <article class="chai-p-20 chai-bg-white chai-rounded-lg chai-shadow-md chai-mb-20 chai-border">
+                <h2 class="chai-text-2xl chai-font-bold chai-mb-5">Understanding JavaScript Closures</h2>
+                <div class="chai-flex chai-gap-10 chai-mb-10 chai-text-sm chai-text-gray">
+                    <span>📅 May 8, 2026</span>
+                    <span>✍️ By Author</span>
+                    <span>💬 5 Comments</span>
+                </div>
+                <p class="chai-text-base chai-mb-10 chai-text-dark">Closures are one of the most important concepts in JavaScript. In this post, we explore what they are, how they work, and practical examples...</p>
+                <a href="#" class="chai-p-8 chai-bg-blue chai-text-white chai-rounded chai-cursor-pointer chai-font-semibold chai-inline-block">Read More →</a>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="chai-p-20 chai-bg-white chai-rounded-lg chai-shadow-md chai-mb-20 chai-border">
+                <h2 class="chai-text-2xl chai-font-bold chai-mb-5">CSS Grid vs Flexbox: When to Use What</h2>
+                <div class="chai-flex chai-gap-10 chai-mb-10 chai-text-sm chai-text-gray">
+                    <span>📅 May 5, 2026</span>
+                    <span>✍️ By Author</span>
+                    <span>💬 8 Comments</span>
+                </div>
+                <p class="chai-text-base chai-mb-10 chai-text-dark">Both CSS Grid and Flexbox are powerful layout tools. This guide helps you understand when to use each one for optimal results...</p>
+                <a href="#" class="chai-p-8 chai-bg-green chai-text-white chai-rounded chai-cursor-pointer chai-font-semibold chai-inline-block">Read More →</a>
+            </article>
+
+            <!-- Post 3 -->
+            <article class="chai-p-20 chai-bg-white chai-rounded-lg chai-shadow-md chai-border">
+                <h2 class="chai-text-2xl chai-font-bold chai-mb-5">Building a ChaiTailwind CSS Engine</h2>
+                <div class="chai-flex chai-gap-10 chai-mb-10 chai-text-sm chai-text-gray">
+                    <span>📅 May 1, 2026</span>
+                    <span>✍️ By Author</span>
+                    <span>💬 12 Comments</span>
+                </div>
+                <p class="chai-text-base chai-mb-10 chai-text-dark">Learn how to build your own lightweight utility-first CSS engine with vanilla JavaScript. We cover DOM manipulation, class parsing, and style application...</p>
+                <a href="#" class="chai-p-8 chai-bg-purple chai-text-white chai-rounded chai-cursor-pointer chai-font-semibold chai-inline-block">Read More →</a>
+            </article>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="chai-p-20 chai-bg-dark chai-text-white chai-text-center chai-mt-30">
+        <p class="chai-mb-10">© 2026 My Blog. All rights reserved.</p>
+        <div class="chai-flex chai-justify-center chai-gap-15">
+            <a href="#" class="chai-text-white chai-cursor-pointer">Twitter</a>
+            <a href="#" class="chai-text-white chai-cursor-pointer">GitHub</a>
+            <a href="#" class="chai-text-white chai-cursor-pointer">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="chaitailwind.js"></script>
+</body>
+</html>

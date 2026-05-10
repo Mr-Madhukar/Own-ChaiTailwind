@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaiTailwind - E-Commerce Product Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 50px;
+        }
+        .star-rating {
+            color: #ffd93d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="chai-p-20 chai-bg-white chai-shadow-md">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h1 class="chai-text-3xl chai-font-bold chai-text-dark chai-mb-5">Shop</h1>
+            <p class="chai-text-lg chai-text-gray">Discover our amazing collection of products</p>
+        </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="chai-p-20 chai-bg-white chai-mb-20" style="max-width: 1200px; margin: 20px auto 20px auto;">
+        <div class="chai-flex chai-gap-15">
+            <select class="chai-p-10 chai-border chai-rounded">
+                <option>All Categories</option>
+                <option>Electronics</option>
+                <option>Fashion</option>
+                <option>Home</option>
+            </select>
+            <select class="chai-p-10 chai-border chai-rounded">
+                <option>Sort By</option>
+                <option>Newest</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Best Sellers</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <main style="max-width: 1200px; margin: 0 auto; padding: 0 20px; margin-bottom: 40px;">
+        <div class="chai-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+            <!-- Product 1 -->
+            <div class="chai-bg-white chai-rounded-lg chai-shadow-md chai-overflow-hidden">
+                <div class="product-image">🎧</div>
+                <div class="chai-p-15">
+                    <h3 class="chai-text-lg chai-font-bold chai-mb-5">Premium Headphones</h3>
+                    <div class="chai-mb-10">
+                        <span class="star-rating">★★★★★</span>
+                        <span class="chai-text-sm chai-text-gray chai-ml-5">(124 reviews)</span>
+                    </div>
+                    <p class="chai-text-sm chai-text-gray chai-mb-10">High-quality audio with active noise cancellation</p>
+                    <div class="chai-flex chai-justify-between chai-items-center chai-mb-10">
+                        <span class="chai-text-2xl chai-font-bold chai-text-blue">$199.99</span>
+                        <span class="chai-text-sm chai-text-gray chai-text-line-through">$249.99</span>
+                    </div>
+                    <button class="chai-w-100 chai-p-10 chai-bg-blue chai-text-white chai-rounded chai-font-semibold chai-cursor-pointer chai-mb-8 chai-block">
+                        Add to Cart
+                    </button>
+                    <button class="chai-w-100 chai-p-10 chai-bg-white chai-border chai-text-blue chai-rounded chai-font-semibold chai-cursor-pointer chai-block">
+                        ♡ Wishlist
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="chai-bg-white chai-rounded-lg chai-shadow-md chai-overflow-hidden">
+                <div class="product-image">📱</div>
+                <div class="chai-p-15">
+                    <h3 class="chai-text-lg chai-font-bold chai-mb-5">Smartphone Pro</h3>
+                    <div class="chai-mb-10">
+                        <span class="star-rating">★★★★☆</span>
+                        <span class="chai-text-sm chai-text-gray chai-ml-5">(89 reviews)</span>
+                    </div>
+                    <p class="chai-text-sm chai-text-gray chai-mb-10">Latest technology with 5G connectivity</p>
+                    <div class="chai-flex chai-justify-between chai-items-center chai-mb-10">
+                        <span class="chai-text-2xl chai-font-bold chai-text-green">$799.99</span>
+                        <span class="chai-text-sm chai-text-gray chai-text-line-through">$899.99</span>
+                    </div>
+                    <button class="chai-w-100 chai-p-10 chai-bg-green chai-text-white chai-rounded chai-font-semibold chai-cursor-pointer chai-mb-8 chai-block">
+                        Add to Cart
+                    </button>
+                    <button class="chai-w-100 chai-p-10 chai-bg-white chai-border chai-text-green chai-rounded chai-font-semibold chai-cursor-pointer chai-block">
+                        ♡ Wishlist
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="chai-bg-white chai-rounded-lg chai-shadow-md chai-overflow-hidden">
+                <div class="product-image">⌚</div>
+                <div class="chai-p-15">
+                    <h3 class="chai-text-lg chai-font-bold chai-mb-5">Smart Watch</h3>
+                    <div class="chai-mb-10">
+                        <span class="star-rating">★★★★★</span>
+                        <span class="chai-text-sm chai-text-gray chai-ml-5">(256 reviews)</span>
+                    </div>
+                    <p class="chai-text-sm chai-text-gray chai-mb-10">Track your fitness with precision sensors</p>
+                    <div class="chai-flex chai-justify-between chai-items-center chai-mb-10">
+                        <span class="chai-text-2xl chai-font-bold chai-text-purple">$299.99</span>
+                        <span class="chai-text-sm chai-text-gray chai-text-line-through">$349.99</span>
+                    </div>
+                    <button class="chai-w-100 chai-p-10 chai-bg-purple chai-text-white chai-rounded chai-font-semibold chai-cursor-pointer chai-mb-8 chai-block">
+                        Add to Cart
+                    </button>
+                    <button class="chai-w-100 chai-p-10 chai-bg-white chai-border chai-text-purple chai-rounded chai-font-semibold chai-cursor-pointer chai-block">
+                        ♡ Wishlist
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="chai-bg-white chai-rounded-lg chai-shadow-md chai-overflow-hidden">
+                <div class="product-image">💻</div>
+                <div class="chai-p-15">
+                    <h3 class="chai-text-lg chai-font-bold chai-mb-5">Laptop Ultra</h3>
+                    <div class="chai-mb-10">
+                        <span class="star-rating">★★★★★</span>
+                        <span class="chai-text-sm chai-text-gray chai-ml-5">(178 reviews)</span>
+                    </div>
+                    <p class="chai-text-sm chai-text-gray chai-mb-10">Powerful performance for professionals</p>
+                    <div class="chai-flex chai-justify-between chai-items-center chai-mb-10">
+                        <span class="chai-text-2xl chai-font-bold chai-text-orange">$1,299.99</span>
+                        <span class="chai-text-sm chai-text-gray chai-text-line-through">$1,499.99</span>
+                    </div>
+                    <button class="chai-w-100 chai-p-10 chai-bg-orange chai-text-white chai-rounded chai-font-semibold chai-cursor-pointer chai-mb-8 chai-block">
+                        Add to Cart
+                    </button>
+                    <button class="chai-w-100 chai-p-10 chai-bg-white chai-border chai-text-orange chai-rounded chai-font-semibold chai-cursor-pointer chai-block">
+                        ♡ Wishlist
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="chai-bg-white chai-rounded-lg chai-shadow-md chai-overflow-hidden">
+                <div class="product-image">🎮</div>
+                <div class="chai-p-15">
+                    <h3 class="chai-text-lg chai-font-bold chai-mb-5">Gaming Console</h3>
+                    <div class="chai-mb-10">
+                        <span class="star-rating">★★★★★</span>
+                        <span class="chai-text-sm chai-text-gray chai-ml-5">(342 reviews)</span>
+                    </div>
+                    <p class="chai-text-sm chai-text-gray chai-mb-10">Next-gen gaming experience awaits</p>
+                    <div class="chai-flex chai-justify-between chai-items-center chai-mb-10">
+                        <span class="chai-text-2xl chai-font-bold chai-text-red">$499.99</span>
+                        <span class="chai-text-sm chai-text-gray chai-text-line-through">$599.99</span>
+                    </div>
+                    <button class="chai-w-100 chai-p-10 chai-bg-red chai-text-white chai-rounded chai-font-semibold chai-cursor-pointer chai-mb-8 chai-block">
+                        Add to Cart
+                    </button>
+                    <button class="chai-w-100 chai-p-10 chai-bg-white chai-border chai-text-red chai-rounded chai-font-semibold chai-cursor-pointer chai-block">
+                        ♡ Wishlist
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="chai-bg-white chai-rounded-lg chai-shadow-md chai-overflow-hidden">
+                <div class="product-image">🎵</div>
+                <div class="chai-p-15">
+                    <h3 class="chai-text-lg chai-font-bold chai-mb-5">Bluetooth Speaker</h3>
+                    <div class="chai-mb-10">
+                        <span class="star-rating">★★★★☆</span>
+                        <span class="chai-text-sm chai-text-gray chai-ml-5">(201 reviews)</span>
+                    </div>
+                    <p class="chai-text-sm chai-text-gray chai-mb-10">Crystal clear sound quality, portable design</p>
+                    <div class="chai-flex chai-justify-between chai-items-center chai-mb-10">
+                        <span class="chai-text-2xl chai-font-bold chai-text-pink">$149.99</span>
+                        <span class="chai-text-sm chai-text-gray chai-text-line-through">$199.99</span>
+                    </div>
+                    <button class="chai-w-100 chai-p-10 chai-bg-pink chai-text-white chai-rounded chai-font-semibold chai-cursor-pointer chai-mb-8 chai-block">
+                        Add to Cart
+                    </button>
+                    <button class="chai-w-100 chai-p-10 chai-bg-white chai-border chai-text-pink chai-rounded chai-font-semibold chai-cursor-pointer chai-block">
+                        ♡ Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="chai-p-30 chai-bg-dark chai-text-white">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="chai-grid" style="grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 30px;">
+                <div>
+                    <h4 class="chai-text-lg chai-font-bold chai-mb-10">About</h4>
+                    <ul style="list-style: none;">
+                        <li class="chai-mb-5"><a href="#" class="chai-text-white chai-cursor-pointer">About Us</a></li>
+                        <li class="chai-mb-5"><a href="#" class="chai-text-white chai-cursor-pointer">Careers</a></li>
+                        <li><a href="#" class="chai-text-white chai-cursor-pointer">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="chai-text-lg chai-font-bold chai-mb-10">Support</h4>
+                    <ul style="list-style: none;">
+                        <li class="chai-mb-5"><a href="#" class="chai-text-white chai-cursor-pointer">Contact</a></li>
+                        <li class="chai-mb-5"><a href="#" class="chai-text-white chai-cursor-pointer">FAQs</a></li>
+                        <li><a href="#" class="chai-text-white chai-cursor-pointer">Help Center</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="chai-text-lg chai-font-bold chai-mb-10">Legal</h4>
+                    <ul style="list-style: none;">
+                        <li class="chai-mb-5"><a href="#" class="chai-text-white chai-cursor-pointer">Privacy</a></li>
+                        <li class="chai-mb-5"><a href="#" class="chai-text-white chai-cursor-pointer">Terms</a></li>
+                        <li><a href="#" class="chai-text-white chai-cursor-pointer">Security</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="chai-text-lg chai-font-bold chai-mb-10">Follow Us</h4>
+                    <ul style="list-style: none;">
+                        <li class="chai-mb-5"><a href="#" class="chai-text-white chai-cursor-pointer">Twitter</a></li>
+                        <li class="chai-mb-5"><a href="#" class="chai-text-white chai-cursor-pointer">Facebook</a></li>
+                        <li><a href="#" class="chai-text-white chai-cursor-pointer">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="chai-text-center chai-pt-20 chai-border" style="border-top: 1px solid #444; margin-top: 30px;">
+                <p>© 2026 Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="chaitailwind.js"></script>
+</body>
+</html>
